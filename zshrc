@@ -8,7 +8,7 @@ source $ZSH/oh-my-zsh.sh
 export RBENV_ROOT=$HOME/.rbenv
 export PATH="${RBENV_ROOT}/bin:${PATH}"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-export PATH="./bin:/usr/local/bin:${PATH}"
+export PATH="./bin:${PATH}"
 
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
 export LANG=en_US.UTF-8
