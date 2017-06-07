@@ -26,5 +26,11 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export ANDROID_HOME=/home/gemma/.local/share/umake/android/android-sdk
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
+### bundler
 export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1"
 export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1"
+
+###Phantom JS
+
+export PATH="/usr/local/share/phantomjs/bin:$PATH"
+
