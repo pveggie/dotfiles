@@ -6,4 +6,4 @@ exists()
 
 
 #!/bin/zsh
-
+./scripts/test_script.sh
