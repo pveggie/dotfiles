@@ -35,3 +35,4 @@ export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1"
 export PATH="/usr/local/share/phantomjs/bin:$PATH"
 
 export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
+export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1"
