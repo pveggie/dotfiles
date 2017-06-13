@@ -1,3 +1,4 @@
+#!/bin/zsh
 sudo apt-get install -y postgresql postgresql-contrib libpq-dev build-essential
 echo `whoami` > /tmp/caller
 sudo su - postgres

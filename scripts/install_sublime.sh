@@ -1,3 +1,4 @@
+#!/bin/zsh
 echo "Installing Sublime Text 3"
 sudo add-apt-repository ppa:webupd8team/sublime-text-3
 sudo apt-get update
