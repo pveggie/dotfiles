@@ -13,42 +13,30 @@ exists()
   command -v "$1" >/dev/null 2>&1
 }
 
+create_symlinks() {
+  './scripts/create_symlinks.sh'
+}
+
+install_utilities() {
+  './scripts/install_utilities.sh'
+}
+
+install_sublime() {
+  './scripts/install_sublime.sh'
+}
+
 install_ruby() {
   './scripts/install_ruby.sh'
 }
 
 install_postgresql()
 {
-  sudo apt-get install -y postgresql postgresql-contrib libpq-dev build-essential
-  echo `whoami` > /tmp/caller
-  sudo su - postgres
-  psql --command "CREATE ROLE `cat /tmp/caller` LOGIN createdb;"
-  exit
-  rm -f /tmp/caller
+  './scripts/install_postgresql.sh'
 }
 
 #!/bin/zsh
 
-# Symlinks
-echo "Creating symlinks for dotfiles"
-for name in *; do
-  if [ ! -d "$name" ]; then
-    target="$HOME/.$name"
-    if [[ ! "$name" =~ '\.sh$' ]] && [ "$name" != 'README.md' ]; then
-      backup $target
-
-      if [ ! -e "$target" ]; then
-        echo "-----> Symlinking your new $target"
-        ln -s "$PWD/$name" "$target"
-      fi
-    fi
-  fi
-done
-
-# Create link for backgrounds in pictures folder
-ln -s "$PWD/backgrounds" ~/Pictures
-
-#Install utlities
+#Install git
 if exists git; then
   echo "git is installed"
 else
@@ -56,17 +44,21 @@ else
   sudo apt-get install -y git
 fi
 
-sudo apt-get install unetbootin git-gui gitk kolourpaint4 pinta calibre ubuntu-make inkscape gimp chromium-browser
+# Symlinks
+create_symlinks
+
+#Install utlities
+echo "Do you want to install utilities? (y/n)"
+read utilities_install
+if [ $utilities_install = "y" ]; then
+  install_utilities
+fi
 
 # Install sublime if not already installed
 if exists subl; then
   echo "Sublime is already installed"
 else
-  echo "Installing Sublime Text 3"
-  sudo add-apt-repository ppa:webupd8team/sublime-text-3
-  sudo apt-get update
-  sudo apt-get install -y sublime-text-installer
-  echo "Sublime Text 3 Installed"
+  install_sublime
 fi
 
 # Install Webstorm if not already installed
