@@ -1,0 +1,36 @@
+# Reset unwanted aliases
+unalias lt
+
+# Get External IP / local IPs
+alias ip="curl ipinfo.io/ip"
+alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
+
+# Quickly serve the current directory as HTTP
+alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
+
+#move up a directory
+alias up='cd ..'
+
+#open .bashrc file for editing
+alias edzshrc='nano ~/.zshrc'
+
+#open .bash_aliases file for editing
+alias edzshsc='nano ~/.aliases'
+
+#quick install
+alias api='sudo apt-get install'
+alias api='sudo apt-get install --install-suggests'
+
+#jobs long
+alias jl='jobs -l'
+
+#long lists
+alias lll='ls -l'
+alias lla='ls -la'
+
+#update, upgrade, clean
+alias megup='sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get autoremove'
+
