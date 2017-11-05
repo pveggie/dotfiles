@@ -78,6 +78,10 @@
 	"install_prereleases":
 	[
 	],
+	"installed_packages":
+	[
+		"Package Control"
+	],
 	"package_destination": "",
 	"package_name_map":
 	{

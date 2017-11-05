@@ -38,6 +38,10 @@ set_sublime_as_default() {
   './scripts/set_sublime_as_default.sh'
 }
 
+setup_ssh() {
+  './scripts/setup_ssh.sh'
+}
+
 install_sublime_plugins() {
   './scripts/install_sublime_plugins.sh'
 }
