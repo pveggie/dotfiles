@@ -18,8 +18,8 @@ for name in *; do
       backup $target
 
       if [ ! -e "$target" ]; then
-        echo "-----> Symlinking your new $target"
-        ln -s "$PWD/$name" "$target"
+ 	echo "-----> Symlinking your new $target"
+	ln -s "$PWD/$name" "$target"
       fi
     fi
   fi

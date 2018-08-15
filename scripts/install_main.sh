@@ -13,14 +13,6 @@ install_utilities() {
   './scripts/install_utilities.sh'
 }
 
-install_sublime() {
-  './scripts/install_sublime.sh'
-}
-
-install_webstorm() {
-  './scripts/install_webstorm.sh'
-}
-
 install_ruby() {
   './scripts/install_ruby.sh'
 }
@@ -38,22 +30,6 @@ set_sublime_as_default() {
   './scripts/set_sublime_as_default.sh'
 }
 
-setup_ssh() {
-  './scripts/setup_ssh.sh'
-}
-
-install_sublime_plugins() {
-  './scripts/install_sublime_plugins.sh'
-}
-
-#Install git
-if exists git; then
-  echo "git is installed"
-else
-  echo "Installing git"
-  sudo apt-get install -y git
-fi
-
 # Symlinks
 create_symlinks
 
@@ -62,31 +38,6 @@ echo "Do you want to install utilities? (y/n)"
 read utilities_install
 if [[ $utilities_install = "y" ]]; then
   install_utilities
-fi
-
-#Install sublime if not already installed
-if exists subl; then
-  echo "Sublime is already installed"
-else
-  install_sublime
-fi
-
-#Install Webstorm if not already installed
-if exists webstorm; then
-  echo "Webstorm is already installed"
-else
-  echo "Do you want to install Webstorm? (y/n)"
-  read webstorm_setup
-  if [[ $webstorm_setup = "y" ]]; then
-    install_webstorm
-  fi
-fi
-
-#Set-up SSH
-echo "Do you want to set-up ssh? (y/n)"
-read ssh_setup
-if [[ $ssh_setup = "y" ]]; then
-  setup_ssh
 fi
 
 # Install ruby
@@ -116,8 +67,6 @@ YELLOW="\\033[1;33m"
 GREEN="\\033[1;32m"
 
 install_zsh_plugins
-set_sublime_as_default
-install_sublime_plugins
 
 zsh ~/.zshrc
 
