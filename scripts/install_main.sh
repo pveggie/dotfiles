@@ -26,8 +26,8 @@ install_zsh_plugins() {
   './scripts/install_zsh_plugins.sh'
 }
 
-set_sublime_as_default() {
-  './scripts/set_sublime_as_default.sh'
+install_vscode() {
+  './scripts/install_vscode.sh'
 }
 
 # Symlinks
